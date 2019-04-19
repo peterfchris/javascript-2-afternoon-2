@@ -122,7 +122,27 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray) {
+  // I will not do this again
+  var arrayOfArrays = []
+  let evens = []
+  let odds = []
+  for (let i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 !== 0) {
+      odds.push(numbersArray[i])
+    } 
+  }  
+  for (let i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 === 0) {
+      evens.push(numbersArray[i])
+    }
+  } 
+  arrayOfArrays.push(evens)
+  arrayOfArrays.push(odds)
+  return arrayOfArrays
+} 
+ 
+
 
 
 
@@ -144,7 +164,15 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(array) {
+  var randomNumber = getRandomArbitrary()
+  for (var i = 0; i < array.length; i++) {
+    if (randomNumber === array[i]) {
+      return true
+    } 
+  } 
+  return false
+}
 
 
 
@@ -173,8 +201,42 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem(myGroceryList, itemToRemove) {
+  if (!myGroceryList || !itemToRemove) {
+    return []
+  }
+  for (var i = 0; i < myGroceryList.length; i++) {
+    if (itemToRemove === myGroceryList[i]) {
+       myGroceryList.splice(i, 1) 
+    }
+  }
+  return myGroceryList
+}
 
+function addItem(myGroceryList, itemToAdd) {
+  if (!myGroceryList || !itemToAdd) {
+    return []
+  }      
+  myGroceryList.push(itemToAdd)
+  return myGroceryList
+}
+
+// function addItem(myGroceryList, item) {
+//  if (!myGroceryList || !item) {
+//   return [];
+// }
+// myGroceryList.push(item);
+// return myGroceryList;
+// }
+
+// function uniq(arr, cb) {
+//   var newArray = []
+//   for (var i = 0; i < arr.length; i++){
+//     if(newArray.indexOf(arr[i]) === -1){
+//       newArray.push(arr[i]) 
+//     }
+//   } cb(newArray)
+// }
 
 
 ////////// PROBLEM 9 //////////
@@ -183,7 +245,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker() {
+  var array= []
+  for (var i = 1; i <= 215; i++) {
+      array.push(i)
+  }
+  return array
+}
 
 
 
@@ -199,7 +267,17 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+
+function addTen( numbers ) {
+  var newArr = [];
+  
+  for( var i = 0; i < numbers.length; i++ ) {
+    var num = Number(numbers[i]);
+    newArr.push(num + 10);
+  }
+  
+  return newArr;
+}
 
 
 
@@ -225,7 +303,12 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2) {
+    if (arr1.length > arr2.length) {
+      return arr1
+    } 
+    return arr2
+}
 
 
 /*
@@ -237,7 +320,18 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1, arr2) {
+  let newArray = []
+  for (let i = 0; i < arr1.length; i++){
+    for (let j = 0; j < arr2.length; j++) {
+      if(arr1[i] === arr2[j]) {
+        newArray.push(arr1[i]);
+      }
+    }
+  }
+    return newArray
+  }
+  
 
 
 ////////// PROBLEM 12 //////////
@@ -277,8 +371,10 @@ var colt = {
 */
 
 //Code Here
-
-
+devMountainEmployees.push(joe)
+devMountainEmployees.push(cahlan)
+devMountainEmployees.push(ryan)
+devMountainEmployees.push(colt)
 
 /*
   Now let's say Cahlan has to take a leave of absence.
@@ -286,6 +382,7 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees.splice(1, 1)
 
 
 
@@ -298,7 +395,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = []
 
 
 /*
@@ -317,6 +414,24 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Benedict Cumberbatch',
+  email: 'Cumberman@email.com',
+  password: 'iAmTheSecondBestSherlock',
+  username: 'BulbasaurScratchNSniff'
+}
+
+var user3 = {
+  name: 'Jennifer Lopez',
+  email: '104YearOldHottie@hotmail.com',
+  password: 'hunter3',
+  username: 'Shazam'
+}
+
+users.push(user1)
+users.push(user2)
+users.push(user3)
+
 
 
 
